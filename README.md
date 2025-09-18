@@ -64,7 +64,8 @@ json{
 2.2 Створіть .env файл
 
 2.3 Створіть .gitignore
-gitignorenode_modules/
+gitignore 
+node_modules/
 .env
 *.log
 .DS_Store
