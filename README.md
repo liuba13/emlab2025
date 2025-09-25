@@ -140,12 +140,14 @@ GET /api/saveecobot/sync - синхронізація даних
 Запуск проєкту
 5.1 Запуск backend (якщо не запущений)
 У першому терміналі:
-bashcd backend
+bash
+cd backend
 npm run dev
 
 5.2 Запуск frontend
 У другому терміналі:
-bashcd frontend
+bash
+cd frontend
 npm start
 
 Перевірка роботи
