@@ -70,7 +70,7 @@ function StationsTable() {
             </tr>
           ) : (
             stations.map((station) => (
-              <tr key={station.station_id}>
+              <tr key={`station-${station.station_id}-${station.city_name}`}> {/* унікальний ключ для кожного рядка таблиці */}
                 <td>
                   <code>{station.station_id}</code>
                 </td>
@@ -114,3 +114,11 @@ function StationsTable() {
 }
 
 export default StationsTable;
+// Коментарі до коду:
+// Імпортуємо необхідні бібліотеки та компоненти.
+// Функціональний компонент StationsTable відповідає за відображення таблиці станцій.
+// Використовуємо хуки useState та useEffect для управління станом та побічними ефектами.
+// Функція fetchStations отримує дані про станції з API і оновлює стан компонента.
+// Функція getStatusBadge повертає відповідний бейдж для статусу станції.
+// Відображаємо індикатор завантаження, повідомлення про помилку або таблицю з даними залежно від стану.
+// Експортуємо компонент StationsTable для використання в інших частинах додатку.

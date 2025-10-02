@@ -1,20 +1,20 @@
-import axios from 'axios';
-
+import axios from 'axios'; // Імпортуємо axios для HTTP-запитів
+// Базовий URL API
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000/api';
 
-const api = axios.create({
+const api = axios.create({ // Створюємо екземпляр axios з базовим URL та таймаутом
   baseURL: API_BASE_URL,
   timeout: 10000,
-});
+}); 
 
 export const apiService = {
   // Отримати всі станції
   getStations: async () => {
     try {
-      const response = await api.get('/stations');
-      return response.data;
+      const response = await api.get('/stations'); 
+      return response.data; 
     } catch (error) {
-      console.error('Error fetching stations:', error);
+      console.error('Error fetching stations:', error); 
       throw error;
     }
   },
@@ -65,3 +65,14 @@ export const apiService = {
 };
 
 export default apiService;
+// Коментарі до коду:
+// Імпортуємо axios для HTTP-запитів.
+// Встановлюємо базовий URL API з змінної оточення або використовуємо localhost за замовчуванням.
+// Створюємо екземпляр axios з базовим URL та таймаутом.
+// Експортуємо об'єкт apiService з методами для взаємодії з API:
+// - getStations: отримує список станцій моніторингу.
+// - getLatestMeasurements: отримує останні вимірювання.
+// - getMeasurements: отримує всі вимірювання з можливістю передачі параметрів.
+// - syncSaveEcoBot: виконує синхронізацію даних з SaveEcoBot.
+// - getHealth: перевіряє стан здоров'я системи.
+// Кожен метод обробляє помилки та виводить їх у консоль.

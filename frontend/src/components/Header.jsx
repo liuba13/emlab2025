@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Badge, Button } from 'react-bootstrap';
 import apiService from '../services/api';
 
-function Header() {
+function Header() { // Компонент шапки сайту
   const [healthStatus, setHealthStatus] = useState('checking');
   const [syncing, setSyncing] = useState(false);
 
-  useEffect(() => {
+  useEffect(() => { // Перевірка стану здоров'я сервера при завантаженні компонента
     checkHealth();
   }, []);
 
-  const checkHealth = async () => {
+  const checkHealth = async () => { // Функція для перевірки стану здоров'я сервера
     try {
       const health = await apiService.getHealth();
       setHealthStatus(health.success ? 'healthy' : 'unhealthy');
@@ -19,7 +19,7 @@ function Header() {
     }
   };
 
-  const handleSync = async () => {
+  const handleSync = async () => { // Функція для синхронізації з SaveEcoBot
     setSyncing(true);
     try {
       await apiService.syncSaveEcoBot();
@@ -33,9 +33,9 @@ function Header() {
   };
 
   return (
-    <Navbar bg="success" variant="dark" expand="lg">
+    <Navbar bg="success" variant="dark" expand="lg"> 
       <div className="container">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#home"> 
           Екологічний моніторинг
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -69,3 +69,12 @@ function Header() {
 }
 
 export default Header;
+// Коментарі до коду:
+// Імпортуємо необхідні бібліотеки та компоненти.
+// Використовуємо React Bootstrap для стилізації.
+// Використовуємо useState для зберігання стану здоров'я сервера та стану синхронізації.
+// Використовуємо useEffect для перевірки здоров'я сервера при завантаженні компонента.
+// Функція checkHealth виконує запит до API для перевірки стану сервера.
+// Функція handleSync виконує синхронізацію з SaveEcoBot і оновлює сторінку після завершення.
+// Відображаємо Navbar з інформацією про стан сервера та кнопкою для синхронізації.
+// Експортуємо компонент Header для використання в інших частинах додатку.

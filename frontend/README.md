@@ -68,3 +68,35 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Структура проєкту
+frontend/
+├── public/              # Статичні файли
+│   └── index.html
+│
+├── src/
+│   ├── components/      # React компоненти
+│   │   ├── Header.jsx
+│   │   ├── StationsTable.jsx
+│   │   └── MeasurementsTable.jsx
+│   │
+│   ├── services/        # API сервіси
+│   │   └── api.js
+│   │
+│   ├── App.jsx          # Головний компонент
+│   ├── App.css
+│   ├── index.js         # Точка входу
+│   └── index.css
+│
+└── package.json         # Залежності 
+
+Запуск:
+Development режим:
+npm start - запуск на http://localhost:3001
+
+Production build:
+npm run build - створює папку build/
+
+Тести:
+npm test - запуск тестів
