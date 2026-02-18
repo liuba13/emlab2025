@@ -95,7 +95,7 @@ npm install --save-dev nodemon
 
 Крок 4: Запуск MongoDB
 Якщо використовуєте локальний MongoDB:
-# Windows/macOS/Linux
+Windows/macOS/Linux
 mongod
 
 Крок 5: Запуск проєкту
@@ -152,3 +152,9 @@ npm start
 
 Перевірка роботи
 Відкрийте браузер і перейдіть на http://localhost:3001
+
+#Про проєкт
+
+  Розроблено для дисципліни Екологічний моніторинг [Кафедри ЦТЕ КПІ](https://dte.kpi.ua)
+  
+  Детальніше про навчання: https://dte.kpi.ua
